@@ -1,14 +1,14 @@
 # Minecraft Server Network
 
-A self-developed multiplayer Minecraft network focused on scalable backend architecture, distributed server management, and custom Java development.
+A self-developed multiplayer Minecraft network focused on scalable backend architecture, server management, and custom Java development.
 
-This project has been independently developed over several years and has grown from a single Minecraft server into a network of interconnected backend services capable of supporting **up to 200 concurrent players**.
+This project has been developed over several years and has grown from a single Minecraft server into a network of services capable of supporting **up to 200 concurrent players**.
 
 ## Overview
 
 The network is built around a proxy-based architecture that allows players to move between multiple specialized Minecraft servers while backend services communicate through Redis and persist player data through MySQL.
 
-The project was designed and implemented independently, including the application architecture, custom server software, databases, networking, deployment, and infrastructure.
+The project was designed and implemented independently, including custom server software, databases, networking, deployment, and infrastructure.
 
 ## Architecture
 
@@ -47,7 +47,7 @@ The project was designed and implemented independently, including the applicatio
 
 ### Java Backend Services
 
-The network contains multiple custom Java plugins responsible for implementing gameplay, server management, player data, communication, and other network functionality.
+The network contains multiple custom Java plugins responsible for implementing gameplay, server management, player data, communication, and other functionality.
 
 ### Velocity Proxy
 
@@ -59,7 +59,7 @@ Backend servers are dynamically managed rather than relying entirely on a static
 
 Redis is used for communication and coordination between services, including:
 
-* Backend server discovery
+* Server discovery
 * Server status and availability
 * Player information
 * Inter-server communication
@@ -91,7 +91,7 @@ Infrastructure work includes:
 | **MySQL**        | Persistent data storage                       |
 | **Cloudflare**   | DNS, networking, and infrastructure           |
 | **Git / GitHub** | Version control and source management         |
-| **Maven**        | Java project and dependency management        |
+
 
 ## Engineering Challenges
 
@@ -101,9 +101,9 @@ The network needs to coordinate multiple backend servers that may start, stop, r
 
 Redis is used to maintain information about available backend servers and allow services to discover each other without requiring every server to be manually configured.
 
-### Distributed Communication
+### Communication
 
-Multiple independent Minecraft servers need to exchange information and coordinate player activity.
+Multiple Minecraft servers need to exchange information and coordinate player activity.
 
 The architecture separates persistent data from temporary state and inter-service communication, using MySQL for persistent storage and Redis for fast distributed communication.
 
